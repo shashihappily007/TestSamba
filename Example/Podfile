@@ -1,0 +1,6 @@
+use_frameworks!
+target 'TestSamba_Tests' do
+  pod 'TestSamba', :path => '../'
+  
+  
+end
