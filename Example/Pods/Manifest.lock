@@ -1,0 +1,16 @@
+PODS:
+  - TestSamba (0.1.0)
+
+DEPENDENCIES:
+  - TestSamba (from `../`)
+
+EXTERNAL SOURCES:
+  TestSamba:
+    :path: ../
+
+SPEC CHECKSUMS:
+  TestSamba: 0b1821e8acc13eba0bc40d41ac9742b4d3a65485
+
+PODFILE CHECKSUM: ff673f9fe47353192af997ff2530ad3c25c8bb9e
+
+COCOAPODS: 1.4.0

@@ -1,0 +1,6 @@
+framework module TestSamba {
+  umbrella header "TestSamba-umbrella.h"
+
+  export *
+  module * { export * }
+}

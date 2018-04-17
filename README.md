@@ -26,4 +26,4 @@ shashihappily007, shashi@happilyunmarried.com
 
 ## License
 
-TestSamba is available under the MIT license. See the LICENSE file for more info.
+TestSamba is available under the Happily Unmarried Private Limited license. See the LICENSE file for more info.
