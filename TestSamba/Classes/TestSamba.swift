@@ -18,4 +18,9 @@ public class TestSamba
     {
         print("this is samba start method")
     }
+    
+    public func testMethod()
+    {
+        print("This is a method")
+    }
 }
