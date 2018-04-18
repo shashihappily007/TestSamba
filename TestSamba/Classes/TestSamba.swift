@@ -9,7 +9,7 @@ import Foundation
 
 public final class TestSamba
 {
-    static let sharedInstance = TestSamba()
+    public static let sharedInstance = TestSamba()
     private init()
     {
         
