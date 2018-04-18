@@ -23,7 +23,7 @@ TODO: Add long description of the pod here.
 
   s.homepage         = 'https://github.com/shashihappily007/TestSamba'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  #s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'Happily Unmarried Private limited', :file => 'LICENSE' }
   s.author           = { 'shashihappily007' => 'shashi@happilyunmarried.com' }
   s.source           = { :git => 'https://github.com/shashihappily007/TestSamba.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
@@ -39,4 +39,5 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.swift_version = '4'
 end
