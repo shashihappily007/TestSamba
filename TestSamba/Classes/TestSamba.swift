@@ -101,7 +101,6 @@ public final class TestSamba
         {
             request = Request.init(base: BaseUrl.production, endpoint: EndPoint.production, urlParams: urlParamDict, headers: nil)
         }
-        //let request = Request.init(base: BaseUrl.debug, endpoint: EndPoint.debug, urlParams: urlParamDict, headers: nil)
         let networkManager = NetworkManager.init()
         networkManager.execute(request: request, completionData: { (data : [String : Any], statusCode : Int) in
             

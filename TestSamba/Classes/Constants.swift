@@ -7,33 +7,19 @@
 
 import Foundation
 
-public struct Constants{
-    public let var1 = 0
-}
-
-private struct SomePrivate
-{
-    public let var2 = 0
-}
-
-internal struct SomeInternal
-{
-    public let var3 = 0
-}
-
-public enum BaseUrl : String
+internal enum BaseUrl : String
 {
     case debug = "https://gabbar.happly.in"
     case production = "https://crm.happilyunmarried.com/"
 }
 
-public enum EndPoint : String
+internal enum EndPoint : String
 {
     case debug = "/sambha/track.png"
     case production = "crm/sambha/track.png"
 }
 
-public struct Session
+internal struct Session
 {
     public static var customerId : String = ""
     public static var isAnonSession : String = ""
