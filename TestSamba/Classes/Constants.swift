@@ -8,22 +8,32 @@
 import Foundation
 
 public struct Constants{
-    
+    public let var1 = 0
 }
 
-internal enum BaseUrl : String
+private struct SomePrivate
+{
+    public let var2 = 0
+}
+
+internal struct SomeInternal
+{
+    public let var3 = 0
+}
+
+public enum BaseUrl : String
 {
     case debug = "https://gabbar.happly.in"
     case production = "https://crm.happilyunmarried.com/"
 }
 
-internal enum EndPoint : String
+public enum EndPoint : String
 {
     case debug = "/sambha/track.png"
     case production = "crm/sambha/track.png"
 }
 
-internal struct Session
+public struct Session
 {
     public static var customerId : String = ""
     public static var isAnonSession : String = ""
