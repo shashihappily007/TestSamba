@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class NetworkManager
+internal class NetworkManager
 {
     private var session : URLSession
     public init()
@@ -29,13 +29,30 @@ public class NetworkManager
     
     private func prepareUrlRequest(request : Request) throws -> URLRequest
     {
-        let urlStr = "\(request.base)\(request.endPoint)"
+        let urlStr = "\(request.base.rawValue)\(request.endPoint.rawValue)"
         guard let url = URL.init(string: urlStr) else { throw NetworkError.invalidURL(urlStr) }
         var urlRequest = URLRequest.init(url: url, cachePolicy: request.cachePolicy!, timeoutInterval: request.timeout!)
-        if let urlParam = request.urlParams as? [String : String]
+        if let urlParam = request.urlParams
         {
             let query_params = urlParam.map({ (element) -> URLQueryItem in
-                return URLQueryItem(name: element.key, value: element.value)
+                var paramValue : String = ""
+                if element.value is String
+                {
+                    let value  = element.value as! String
+                    paramValue = value
+                }
+                if element.value is [String : Any]
+                {
+                    let value = element.value as! [String : Any]
+                    if let jsonData = try? JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                    {
+                        if let jsonStr = String(data : jsonData, encoding : String.Encoding.utf8)
+                        {
+                            paramValue = jsonStr
+                        }
+                    }
+                }
+                return URLQueryItem(name: element.key, value: paramValue)
             })
             guard var components = URLComponents(string: urlStr) else {
                 throw NetworkError.invalidURL(urlStr)
@@ -52,19 +69,14 @@ public class NetworkManager
                 urlRequest.addValue(value, forHTTPHeaderField: key)
             }
         }
-//        if let body = request.body
-//        {
-//            let bodyData = try? body.encodedData()
-//            urlRequest.httpBody = bodyData
-//        }
         return urlRequest
     }
 }
 
-public typealias ParametersDict = [String : Any]
-public typealias HeadersDict = [String: String]
+internal typealias ParametersDict = [String : Any]
+internal typealias HeadersDict = [String: String]
 
-public struct Request
+internal struct Request
 {
     public var base : BaseUrl
     public var endPoint: EndPoint

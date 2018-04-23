@@ -11,19 +11,19 @@ public struct Constants{
     
 }
 
-public enum BaseUrl : String
+internal enum BaseUrl : String
 {
     case debug = "https://gabbar.happly.in"
     case production = "https://crm.happilyunmarried.com/"
 }
 
-public enum EndPoint : String
+internal enum EndPoint : String
 {
     case debug = "/sambha/track.png"
     case production = "crm/sambha/track.png"
 }
 
-public struct Session
+internal struct Session
 {
     public static var customerId : String = ""
     public static var isAnonSession : String = ""
